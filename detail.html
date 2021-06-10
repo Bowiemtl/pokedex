@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://kit.fontawesome.com/7054f75d4c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script src='canvas.js'></script>
+    <script src='main.js'></script>
+    <script src='detail.js'></script>
+</head>
+
+<body>
+    <button id="button-back">back</button>
+    <div class="pokemon-detail-wrapper">
+        <div class="name-header">
+            <i class="fas fa-caret-square-left" id="button-prev"></i>
+            <div class="pokemon-general">
+                <h5 class="pokemon-font pokemon-number">{id}</h1>
+                    <h1 class="pokemon-font pokemon-name">{name}</h1>
+            </div>
+            <i class="fas fa-caret-square-right" id="button-next"></i>
+        </div>
+        <div class="pokemon-stat-graph">
+            <ul>
+                <li><h2 class="pokemon-font">Base stats:</h1></li>
+                <li><canvas height="50%" width="50%"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
