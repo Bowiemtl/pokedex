@@ -1,28 +1,15 @@
-let amount = 20;
-let scale = 2;
+let amount = 30;
+let scale = 1;
 let stats;
-let color;
-let invertedColor;
-function capitalizeFirstLetter(string) {
+let color = [];
+let invertedColor = [];
+
+function firstLetterUppercase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function remap(input, input_start, input_end, output_start, output_end) {
-    return output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start);
-}
-
-const invertColor = (bg) => {
-    bg = parseInt(Number(bg.replace('#', '0x')), 10)
-    bg = ~bg
-    bg = bg >>> 0
-    bg = bg & 0x00ffffff
-    bg = '#' + bg.toString(16).padStart(6, "0")
-
-    return bg
-}
-
-function getColorFromType(type)
-{
+//return a color based on a pokemon's type
+function getColorForType(type) {
     let color;
     switch (type) {
         case "normal":

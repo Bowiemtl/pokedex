@@ -7,34 +7,68 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="https://kit.fontawesome.com/7054f75d4c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
         </script>
-    <script src='canvas.js'></script>
-    <script src='main.js'></script>
-    <script src='detail.js'></script>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://kit.fontawesome.com/7054f75d4c.js" crossorigin="anonymous"></script>
+    <link href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon" rel="stylesheet"
+        type="text/css" />
 </head>
 
 <body>
-    <button id="button-back">back</button>
-    <div class="pokemon-detail-wrapper">
-        <div class="name-header">
-            <i class="fas fa-caret-square-left" id="button-prev"></i>
-            <div class="pokemon-general">
-                <h5 class="pokemon-font pokemon-number">{id}</h1>
-                    <h1 class="pokemon-font pokemon-name">{name}</h1>
+    <div class="pokemon-detail-wrapper background">
+        <header class="pokedex-header">
+            <div class="header-top">
+                <button id="button-back"><img src="assets/pokeball.svg" class="filter-orange"> TO POKÉDEX</button>
             </div>
-            <i class="fas fa-caret-square-right" id="button-next"></i>
-        </div>
-        <div class="pokemon-stat-graph">
-            <ul>
-                <li><h2 class="pokemon-font">Base stats:</h1></li>
-                <li><canvas height="50%" width="50%"></li>
-            </ul>
+
+            <div class="info-header">
+                <i class="fas fa-caret-square-left header-button" id="button-prev"></i>
+                <img class="pokemon-sprite" id="prev-sprite">
+
+                <div class="pokemon-general-wrapper">
+                    <div class="pokemon-general">
+                        <p class="pokemon-font pokemon-name"></p>
+                        <p class="pokemon-font pokemon-number"></p>
+                    </div>
+                </div>
+                <img class="pokemon-sprite" id="next-sprite">
+
+                <i class="fas fa-caret-square-right header-button" id="button-next"></i>
+            </div>
+        </header>
+
+        <div class="detail-list">
+
+            <div class="pokemon-stat-graph">
+                <canvas id="graph" height="50%" width="50%"></canvas>
+            </div>
+
+            <div class="pokemon-ability-list-wrapper">
+                <table class="pokemon-ability-list">
+                    <tr><td><p>abilities</p></td></tr>
+                </table>
+            </div>
+            <div class="pokemon-sprite-wrapper">
+                <img class="pokemon-sprite" id="current-sprite" src="assets/ajax-loader.gif">
+            </div>
+            <div class="pokemon-types">
+            </div>
+
+            <div class="description-wrapper">
+            </div>
+            <div class="evolution-chain-wrapper">
+                <table>
+                    <tr class="evolution-chain"></tr>
+                </table>
+            </div>
         </div>
     </div>
-</body>
 
+    <script src='main.js'></script>
+    <script src='detail-canvas.js'></script>
+    <script src='detail.js'></script>
+</body>
 </html>
